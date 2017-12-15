@@ -10,8 +10,8 @@ for VH in `env | grep "VH_"`; do
 done;
 
 for SET_HTTP in `env | grep "SET_HTTP_"`; do
-    ENV=`echo $SET_HTTP | cut -d'=' -f 1'`
-    VALUE=`echo $SET_HTTP | cut -d'=' -f2`
+    ENV=`echo $SET_HTTP | awk -F "=" '{print $1}'`
+    VALUE=`echo $SET_HTTP | awk -F "=" '{print $2}'`
     echo "${ENV:9} $VALUE;" >> /etc/nginx/conf.d/http_vars.conf
 done;
 
