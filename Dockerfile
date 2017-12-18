@@ -6,5 +6,7 @@ ADD ./usr/ /usr/
 
 EXPOSE 80
 
+VOLUME ["/etc/nginx/conf.d/", "/etc/nginx/ssl"]
+
 ENTRYPOINT ["/usr/sbin/container-entrypoint.sh"]
 CMD ["nginx", "-g", "daemon off;"]
