@@ -4,7 +4,7 @@ MAINTAINER Egor Zyuskin <ezyuskin@codenetix.com>
 ADD ./etc/ /etc/
 ADD ./usr/ /usr/
 
-EXPOSE 80
+EXPOSE 80 443
 
 VOLUME ["/etc/nginx/conf.d/", "/etc/nginx/ssl"]
 
